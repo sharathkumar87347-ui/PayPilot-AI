@@ -1,0 +1,834 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --page-bg: #f7f5ff;
+  --card-bg: #ffffff;
+  --text-color: #292044;
+  --muted: #777777;
+  --input-bg: #ffffff;
+  --border: #e8e3f3;
+  --accent: #6035bb;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--text-color);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* LOGIN PAGE */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #eee7ff, #d8c8ff, #f9f6ff);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 430px;
+  padding: 40px;
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 15px 45px rgba(75, 40, 140, 0.15);
+  color: #292044;
+}
+
+.login-logo {
+  text-align: center;
+  font-size: 42px;
+}
+
+.login-card h1 {
+  text-align: center;
+  color: #6035bb;
+  margin: 10px 0;
+}
+
+.login-subtitle,
+.login-description,
+.login-footer {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+}
+
+.login-card h2 {
+  margin: 35px 0 10px;
+  color: #35205f;
+}
+
+.login-description {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.login-card label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd4f5;
+  border-radius: 9px;
+  outline: none;
+  font-size: 14px;
+}
+
+.login-card input:focus {
+  border-color: #7546d8;
+}
+
+.password-box {
+  display: flex;
+  gap: 5px;
+}
+
+.password-box input {
+  flex: 1;
+  min-width: 0;
+}
+
+.password-box button {
+  border: none;
+  background: #eee8ff;
+  color: #6035bb;
+  padding: 0 10px;
+  border-radius: 8px;
+}
+
+.login-button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #7546d8, #5125a8);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.login-button:hover {
+  opacity: 0.9;
+}
+
+.login-footer {
+  margin-top: 25px;
+}
+
+/* MAIN APPLICATION */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text-color);
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 255px;
+  flex-shrink: 0;
+  padding: 28px 18px;
+  background: linear-gradient(180deg, #17102e, #5732b2);
+  color: white;
+}
+
+.sidebar h2 {
+  margin: 0 0 32px;
+  font-size: 21px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sidebar nav button {
+  width: 100%;
+  padding: 13px 12px;
+  text-align: left;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sidebar nav button:hover,
+.sidebar nav button.active-menu {
+  background: #7955dc;
+}
+
+.logout-button {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: white;
+  color: #6035bb;
+  border: none;
+  border-radius: 8px;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 35px;
+  overflow: hidden;
+}
+
+.main-content h1 {
+  font-size: 28px;
+  margin: 8px 0 10px;
+}
+
+.main-content > p {
+  color: #888;
+  margin: 12px 0 30px;
+}
+
+/* HEADER */
+
+.page-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 25px;
+  padding: 14px 18px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(51, 32, 91, 0.05);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.my-account-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 15px;
+  border: none;
+  border-radius: 9px;
+  background: #f0edff;
+  color: #30276f;
+  font-weight: 600;
+}
+
+.my-account-button:hover {
+  background: #e5deff;
+}
+
+/* ACCOUNT DROPDOWN */
+
+.account-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 320px;
+  max-width: calc(100vw - 40px);
+  padding: 20px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 15px;
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.13);
+  z-index: 1000;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-avatar {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #e9e5ff;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.profile-header h3,
+.profile-header p {
+  margin: 0 0 4px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 15px 0;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background: var(--input-bg);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+.profile-value {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.password-toggle {
+  border: none;
+  background: transparent;
+  color: #5144bd;
+  font-weight: 600;
+}
+
+.account-dropdown hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 13px 0;
+}
+
+.account-settings-button,
+.account-logout-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 9px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.account-settings-button {
+  background: #eeeaff;
+  color: #4435a5;
+}
+
+.account-logout-button {
+  background: #fff0f0;
+  color: #c33;
+}
+
+/* DASHBOARD CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 22px 0;
+}
+
+.card {
+  min-width: 0;
+  padding: 24px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(70, 40, 120, 0.08);
+}
+
+.card h3 {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.card h2 {
+  color: #6539bd;
+  margin: 8px 0;
+}
+
+.card p {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.transactions {
+  margin-top: 25px;
+}
+
+.transactions p {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.transactions span {
+  color: #6339bd;
+  font-weight: bold;
+}
+
+/* FEATURE PAGES */
+
+.page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* FORMS */
+
+.feature-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.feature-form label,
+.card label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.feature-form input,
+.feature-form select,
+.toolbar input,
+.toolbar select,
+.card label input,
+.card label select,
+.chat-form input {
+  width: 100%;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid #ddd9eb;
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-color);
+}
+
+.primary-button,
+.secondary-button {
+  border: none;
+  border-radius: 8px;
+  padding: 11px 15px;
+  font-weight: 600;
+}
+
+.primary-button {
+  background: #4435b5;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #35268f;
+}
+
+.secondary-button {
+  background: #eeeaff;
+  color: #4435a5;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  align-self: end;
+}
+
+/* TOOLBAR */
+
+.toolbar,
+.chat-form {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.toolbar input,
+.chat-form input {
+  flex: 1;
+}
+
+/* TABLES */
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.data-table th {
+  background: #f1efff;
+  color: #40377e;
+}
+
+.table-subtitle {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.text-button {
+  border: none;
+  background: transparent;
+  color: #5144bd;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.text-button.danger {
+  color: #c33;
+}
+
+.income-text {
+  color: #16834a;
+  font-weight: bold;
+}
+
+.expense-text {
+  color: #c33;
+  font-weight: bold;
+}
+
+/* SAVINGS GOALS */
+
+.goal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.progress-track {
+  height: 11px;
+  background: #e9e6f5;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7465e8, #b34eb1);
+  border-radius: 20px;
+}
+
+/* ANALYTICS */
+
+.analytics-row {
+  margin: 20px 0;
+}
+
+.analytics-row small,
+.disclaimer {
+  color: var(--muted);
+}
+
+/* BUDGETS */
+
+.budget-row {
+  margin: 20px 0;
+}
+
+.budget-row progress {
+  width: 100%;
+  height: 12px;
+  accent-color: #6654d9;
+  margin-top: 10px;
+}
+
+/* AI ASSISTANT */
+
+.assistant-card {
+  max-width: 950px;
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 390px;
+  overflow: auto;
+  padding: 16px;
+  margin: 16px 0;
+  background: #f4f2fb;
+  border-radius: 12px;
+}
+
+.chat-message {
+  max-width: 82%;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.chat-message.assistant {
+  align-self: flex-start;
+  background: white;
+  color: #292642;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  background: #5144bd;
+  color: white;
+}
+
+.disclaimer {
+  display: block;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* SETTINGS */
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.empty-state {
+  padding: 18px;
+  color: var(--muted);
+}
+
+.card small {
+  font-size: 12px;
+}
+
+/* TRANSACTION STATUS */
+
+.status-paid,
+.status-pending {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.status-paid {
+  background: #e3f8eb;
+  color: #16834a;
+}
+
+.status-pending {
+  background: #fff2d9;
+  color: #996000;
+}
+
+/* DARK MODE */
+
+.dark-mode {
+  --page-bg: #151525;
+  --card-bg: #222238;
+  --text-color: #eeeefa;
+  --muted: #b9b8ca;
+  --input-bg: #292941;
+  --border: #41415b;
+}
+
+.dark-mode .main-content,
+.dark-mode.app-layout {
+  background: var(--page-bg);
+  color: var(--text-color);
+}
+
+.dark-mode .card,
+.dark-mode .page-header,
+.dark-mode .account-dropdown {
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.dark-mode .card p,
+.dark-mode .card h1,
+.dark-mode .card h2,
+.dark-mode .card h3,
+.dark-mode .main-content h1 {
+  color: var(--text-color);
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode .profile-info {
+  background: var(--input-bg);
+  color: var(--text-color);
+  border-color: #454562;
+}
+
+.dark-mode .chat-window {
+  background: #19192d;
+}
+
+.dark-mode .chat-message.assistant {
+  background: #30304a;
+  color: white;
+}
+
+.dark-mode .data-table th {
+  background: #343252;
+  color: white;
+}
+
+.dark-mode .data-table td {
+  color: var(--text-color);
+  border-color: #41415b;
+}
+
+.dark-mode .progress-track {
+  background: #41415b;
+}
+
+.dark-mode .my-account-button,
+.dark-mode .secondary-button {
+  background: #39345f;
+  color: #eeeaff;
+}
+
+.dark-mode .login-page {
+  background: linear-gradient(135deg, #17172a, #292344);
+}
+
+.dark-mode .login-card {
+  background: #222238;
+  color: #eeeefa;
+}
+
+.dark-mode .login-card h2 {
+  color: #eeeefa;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .main-content {
+    padding: 24px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .sidebar h2 {
+    margin-bottom: 15px;
+  }
+
+  .sidebar nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sidebar nav button {
+    font-size: 12px;
+    padding: 10px 8px;
+  }
+
+  .sidebar .logout-button {
+    margin-top: 15px;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-form {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar,
+  .chat-form {
+    flex-direction: column;
+  }
+
+  .page-header {
+    flex-wrap: wrap;
+  }
+
+  .chat-message {
+    max-width: 95%;
+  }
+
+  .login-card {
+    padding: 25px;
+  }
+
+  .setting-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
