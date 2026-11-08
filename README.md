@@ -1,16 +1,60 @@
-# React + Vite
+💜 PayPilot AI – Smart Personal Finance Assistant
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Manage your money smarter with PayPilot AI!
 
-Currently, two official plugins are available:
+PayPilot AI is a smart personal finance dashboard designed to help users track income, manage expenses, monitor unusual spending, plan savings and stay on top of upcoming bills.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🚀 Features
 
-## React Compiler
+- Dashboard: View total balance, income and expenses.
+- My Wallet: Monitor your financial balance.
+- Transaction Management: Manage and track transactions.
+- Budgets: Organize spending limits.
+- Savings Goals: Set and monitor savings targets.
+- Expense Analytics: Understand spending patterns.
+- Smart Bill Reminders: Keep track of upcoming bills.
+- Spending Detector: Identify potentially unusual transactions.
+- AI Financial Assistant: Get financial guidance through an interactive assistant.
+- Dark Mode: Switch between light and dark themes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🛠️ Technologies Used
 
-## Expanding the Oxlint configuration
+- React.js
+- Vite
+- JavaScript
+- CSS
+- Node.js
+- Express.js
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+💻 Run Locally
+
+1. Clone the repository:
+   
+   git clone https://github.com/sharathkumar87347-ui/PayPilot-AI.git
+
+2. Open the project folder:
+   
+   cd PayPilot-AI
+
+3. Install dependencies:
+   
+   npm install
+
+4. Start the frontend:
+   
+   npm run dev
+
+5. Open the local URL shown in your terminal.
+
+🎯 Hackathon Project
+
+Project: PayPilot AI
+Category: AI-powered Personal Finance Management
+
+🌟 Our Vision
+
+To make personal finance management easier, smarter and more accessible through an intuitive digital experience.
+
+---
+
+Built with 💜 for smarter financial management.
